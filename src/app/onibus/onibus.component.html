@@ -1,0 +1,23 @@
+<h1>Linhas de ônibus</h1>
+<div class="container row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let linha of linhasOnibus">
+                        <td>{{linha.id}}</td>
+                        <td>{{linha.codigo}}</td>
+                        <td>{{linha.nome}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
