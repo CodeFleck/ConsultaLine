@@ -17,6 +17,8 @@ export class LotacaoComponent implements OnInit {
   selectedLotacao: LinhaLotacao;
   action: string;
   search: any;
+  totalRecords: string;
+  page: Number=1;
   
   constructor(private httpClientService: HttpClientService,
     private router: Router,
@@ -44,6 +46,7 @@ export class LotacaoComponent implements OnInit {
   
   handleSuccessfulResponse(response) {
     this.linhasLotacao = response;  
+    this.totalRecords = response.length;
   }
 
   viewItinerario(id: number) {

@@ -2,9 +2,9 @@
 <div class="container-fluid">
 <h1 class="titulo">Linhas de ônibus</h1>
 <div class="row">
-    <div class="col-md-9 dados">
+    <div class="col-md-8 dados">
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover table-sm">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -14,7 +14,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let linha of linhasOnibus | search:search">
+                    <tr *ngFor="let linha of linhasOnibus | paginate: { id: 'listing_pagination',
+                        itemsPerPage: 9,
+                        currentPage: page,
+                        totalItems: totalRecords} | search:search">
                         <td>{{linha.id}}</td>
                         <td>{{linha.codigo}}</td>
                         <td>{{linha.nome}}</td>
@@ -22,9 +25,12 @@
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <app-itinerario *ngIf="action === 'view'" [linhaOnibus]="selectedOnibus" (newItinerarioEscolhidoEvent)="refreshData()"></app-itinerario>
     </div>
 </div>

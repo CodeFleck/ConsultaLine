@@ -17,6 +17,8 @@ export class OnibusComponent implements OnInit {
   selectedOnibus: LinhaOnibus;
   action: string;
   search: any;
+  totalRecords: string;
+  page: Number=1;
   
   constructor(private httpClientService: HttpClientService,
     private router: Router,
@@ -43,7 +45,8 @@ export class OnibusComponent implements OnInit {
   }
 
   handleSuccessfulResponse(response) {
-    this.linhasOnibus = response;  
+    this.linhasOnibus = response;    
+    this.totalRecords = response.length;  
   }
 
   viewItinerario(id: number) {

@@ -23,6 +23,8 @@ export class ItinerarioComponent implements OnInit {
   itinerario: Array<Coordenadas>;
   newLinhaOnibus: LinhaOnibus;
   newLinhaLotacao: LinhaLotacao;
+  totalRecords: string;
+  page: Number=1;
 
   constructor(private httpClientService: HttpClientService,
     private activatedRoute: ActivatedRoute) { }
@@ -48,6 +50,7 @@ export class ItinerarioComponent implements OnInit {
     const responseArr = Object.values(response);
     let resp = responseArr.map(this.editResponse);
     this.itinerario = resp;
+    this.totalRecords = response.length;
   }
 
   editResponse(item) {

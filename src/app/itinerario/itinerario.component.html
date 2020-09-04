@@ -7,10 +7,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let coordenada of itinerario">
+        <tr *ngFor="let coordenada of itinerario | paginate: { id: 'listing_pagination',
+        itemsPerPage: 9,
+        currentPage: page,
+        totalItems: totalRecords}">
           <td><a href="https://www.google.com/maps/?q={{coordenada.lat}},{{coordenada.lng}}" target="_blank">Local</a></td>
         </tr>
       </tbody>
     </table>
+    <div>
+      <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+    </div>
   </div>
 </div>
