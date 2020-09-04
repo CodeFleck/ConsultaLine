@@ -16,6 +16,7 @@ export class LotacaoComponent implements OnInit {
   linhasLotacao: Array<LinhaLotacao>;
   selectedLotacao: LinhaLotacao;
   action: string;
+  search: any;
   
   constructor(private httpClientService: HttpClientService,
     private router: Router,

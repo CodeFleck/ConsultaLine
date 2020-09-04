@@ -16,6 +16,8 @@ export class OnibusComponent implements OnInit {
   linhasOnibus: Array<LinhaOnibus>;
   selectedOnibus: LinhaOnibus;
   action: string;
+  search: any;
+  
   constructor(private httpClientService: HttpClientService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }

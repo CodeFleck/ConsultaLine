@@ -10,11 +10,11 @@
                         <th>ID</th>
                         <th>Código</th>
                         <th>Nome</th>
-                        <th></th>
+                        <th><input type="text" class="form-control mr-sm-2" placeholder="Pesquisar" aria-label="Search" name="search" [(ngModel)]="search" /></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let linha of linhasOnibus">
+                    <tr *ngFor="let linha of linhasOnibus | search:search">
                         <td>{{linha.id}}</td>
                         <td>{{linha.codigo}}</td>
                         <td>{{linha.nome}}</td>
