@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="row">
+      <div class="col-md-9 tarefa">
+        <h5 class="text-center">Avaliação Prática</h5>
+        <br>
+          <p class="text-left">
+            Objetivo: desenvolvimento de um sistema frontend integrado ao DataPoa para consulta de linhas de ônibus e linhas de lotação.
+          </p>
+          <br>
+          <h5 class="text-center">Especificações</h5>
+          <br>
+          <b>Frontend</b>
+          <br>
+          <p>O frontend da aplicação tem por requisito ser desenvolvido utilizando, no mínimo, as seguintes tecnologias:</p>
+          <ul>
+              <li>Angular 5 ou posterior</li>
+              <li>Bootstrap 3.3.7 ou posterior</li>
+          </ul>
+          <br>
+          <b>Parte 1 - Integração com a API do DataPoa:</b>
+          <br>
+          <p>Operações necessárias para a integração e exemplos:</p>
+          <ul>
+              <li>Listar as linhas de ônibus <a href="http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%&t=o">(Exemplo)</a></li>
+              <li>Listar as linhas de lotação <a href="http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%&t=l">(Exemplo)</a></li>
+              <li>Obter o itinerário de uma unidade de transporte <a href="http://www.poatransporte.com.br/php/facades/process.php?a=il&p=5527">(Exemplo)</a></li>
+          </ul>
+          <br>
+          <b>Parte 2 - Apresentação</b>
+          <p>A aplicação deve apresentar uma tela intuitiva que seja possível ao usuário pesquisar sobre linhas de ônibus ou lotação. Deve ser possível listar as linhas e filtrá-las por nome, além de poder consultar o itinerário da unidade de transporte. </p>
+          <br>
+          <b>Parte 3 - Consulta</b>
+          <p>Na consulta de itinerário devem ser listadas todas as localidades da unidade de transporte como links para redirecionar o usuário ao Google Maps. A integração pode ser feita passando os parâmetros de latitude e longitude para a API.<br> (Ex.: https://www.google.com/maps/?q=LATITUDE,LONGITUDE)</p>
+          <br>
+          <b>Observações Extras</b>
+          <p>Os códigos devem ser escritos levando em consideração boas práticas de programação e design, podendo o desenvolvedor se valer do <a href="https://angular.io/guide/styleguide">Angular Style Guide</a>.
+            Como sugestão, a usabilidade da aplicação deve ser elaborada de forma a emitir feedbacks visuais ao usuário, sempre tratando erros de conexão e lentidão com a integração aos serviços externos.
+            </p>
+        </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+  </div>

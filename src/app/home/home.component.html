@@ -1,22 +1,18 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">Consulta Lines</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li *ngFor="let items of menuItems" class="nav-item">
-        <a class="nav-link" (click)="display(items.linkId)">{{ items.linkName }}</a>
-      </li>
-    </ul>
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row homeMain">
+    <div class="col-md-5">
+      <div>
+        <h2 class="titulo">Bem vindo ao Consulta Line!</h2>
+        <h6>Escolha a sua consulta:</h6>
+        <div class="row buttonsHome">
+          <button type="button" class="btn btn-success" (click)="goToConsultaOnibus()">ônibus</button>
+          <button type="button" class="btn btn2 btn-success" (click)="goToConsultaLotacao()">Lotação</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <img class="imagemHome" [src]=imageMap>
+    </div>
   </div>
-</nav>
+</div>

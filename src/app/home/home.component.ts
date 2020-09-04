@@ -8,23 +8,18 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  menuItems = [
-    {linkId: 1, linkName: 'ônibus'},
-    {linkId: 2, linkName: 'Lotação'}
-  ]
+  imageMap: string = 'assets/images/map.png';
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  display(linkId) {
-    console.log(linkId);
-    if(linkId == 1) {
+  goToConsultaOnibus() {
       this.router.navigate(['linhas-onibus']);  
-    }
-    if(linkId == 2) {
-      this.router.navigate(['linhas-lotacao']);
-    }
   }
 
+  goToConsultaLotacao() {
+    this.router.navigate(['linhas-lotacao']);
+  }
 }

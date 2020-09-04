@@ -10,6 +10,8 @@ import { OnibusComponent } from './onibus/onibus.component';
 import { LotacaoComponent } from './lotacao/lotacao.component';
 import { ItinerarioComponent } from './itinerario/itinerario.component';
 import { SearchPipe } from './search.pipe';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TarefaComponent } from './tarefa/tarefa.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SearchPipe } from './search.pipe';
     OnibusComponent,
     LotacaoComponent,
     ItinerarioComponent,
-    SearchPipe
+    SearchPipe,
+    NavBarComponent,
+    TarefaComponent
   ],
   imports: [
     BrowserModule,
