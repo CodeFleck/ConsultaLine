@@ -1,0 +1,16 @@
+<div class="col-md-12">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Localidades</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coordenada of itinerario">
+          <td><a href="https://www.google.com/maps/?q={{coordenada.lat}},{{coordenada.lng}}" target="_blank">Local</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { LinhaLotacao } from '../model/LinhaLotacao';
+import { HttpClientService } from '../service/http-client.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lotacao',
@@ -7,9 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LotacaoComponent implements OnInit {
 
-  constructor() { }
+  @Output()
+  newItinerarioEscolhidoEvent = new EventEmitter();
 
-  ngOnInit(): void {
+  linhasLotacao: Array<LinhaLotacao>;
+  selectedLotacao: LinhaLotacao;
+  action: string;
+  
+  constructor(private httpClientService: HttpClientService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.refreshData();
+  }
+
+  refreshData() {
+    this.selectedLotacao = new LinhaLotacao();
+    this.httpClientService.getLinhasLotacao().subscribe(
+      response => this.handleSuccessfulResponse(response),
+    );
+    this.activatedRoute.queryParams.subscribe(
+      (params) => {
+        this.action = params['action'];
+        const selectedLotacaoId = params['id'];
+        if (selectedLotacaoId) {
+          this.selectedLotacao = this.linhasLotacao.find(selectedLotacao => selectedLotacao.id === selectedLotacaoId)
+        }
+      }
+    );
+  }
+  
+  handleSuccessfulResponse(response) {
+    this.linhasLotacao = response;  
+  }
+
+  viewItinerario(id: number) {
+    this.newItinerarioEscolhidoEvent.emit();
+    this.router.navigate(['linhas-lotacao'], { queryParams: { id, action: 'view' } });
   }
 
 }
