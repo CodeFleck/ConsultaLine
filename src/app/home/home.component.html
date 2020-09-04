@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="/">Consulta Lines</a>
   <button
     class="navbar-toggler"
@@ -14,15 +14,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/linhas-onibus"
-          >ônibus<span class="sr-only">(current)</span></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/linhas-lotacao"
-          >Lotação <span class="sr-only">(current)</span></a
-        >
+      <li *ngFor="let items of menuItems" class="nav-item">
+        <a class="nav-link" (click)="display(items.linkId)">{{ items.linkName }}</a>
       </li>
     </ul>
   </div>
